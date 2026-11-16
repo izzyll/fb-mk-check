@@ -42,7 +42,7 @@ function renderList() {
   if (!filtered.length) {
     const div = document.createElement("div");
     div.className = "empty";
-    div.textContent = entries.length ? "Sin resultados." : "Todavía no marcaste avisos.";
+    div.textContent = entries.length ? "Sin resultados." : "Todavía no has marcado avisos.";
     list.appendChild(div);
     return;
   }
@@ -96,7 +96,7 @@ function renderList() {
   if (filtered.length > LIST_LIMIT) {
     const div = document.createElement("div");
     div.className = "empty";
-    div.textContent = `Mostrando ${LIST_LIMIT} de ${filtered.length}. Usá el buscador para filtrar.`;
+    div.textContent = `Mostrando ${LIST_LIMIT} de ${filtered.length}. Usa el buscador para filtrar.`;
     list.appendChild(div);
   }
 }
@@ -168,7 +168,7 @@ $("file").addEventListener("change", async (e) => {
 $("clear").addEventListener("click", async () => {
   const keys = entries.map((e) => KEY_PREFIX + e.id);
   if (!keys.length) return;
-  if (!confirm(`¿Borrar ${keys.length} avisos vistos? No se puede deshacer (exportá antes si querés).`)) return;
+  if (!confirm(`¿Borrar ${keys.length} avisos vistos? No se puede deshacer (exporta antes si quieres conservarla).`)) return;
   await chrome.storage.local.remove(keys);
   msg("Listo, lista vaciada.");
   refresh();
