@@ -1,0 +1,102 @@
+.fmv-cell {
+  position: relative !important;
+}
+
+/* Modo atenuar */
+.fmv-cell.fmv-dim > :not(.fmv-check) {
+  opacity: 0.3;
+  filter: grayscale(100%);
+  transition: opacity 0.15s ease, filter 0.15s ease;
+}
+.fmv-cell.fmv-dim:hover > :not(.fmv-check) {
+  opacity: 0.85;
+  filter: none;
+}
+
+/* Modo ocultar */
+.fmv-cell.fmv-hide {
+  display: none !important;
+}
+
+/* Check sobre cada aviso (siempre visible) */
+.fmv-check {
+  position: absolute !important;
+  top: 8px;
+  right: 8px;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 9px 4px 5px;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  font: 600 12px/1 system-ui, -apple-system, "Segoe UI", sans-serif;
+  cursor: pointer;
+  user-select: none;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+  pointer-events: auto;
+}
+.fmv-check:hover {
+  background: rgba(0, 0, 0, 0.88);
+}
+.fmv-box {
+  width: 18px;
+  height: 18px;
+  box-sizing: border-box;
+  border: 2px solid #fff;
+  border-radius: 4px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  line-height: 1;
+}
+.fmv-check .fmv-label {
+  display: none;
+}
+.fmv-cell:hover .fmv-check .fmv-label,
+.fmv-check.fmv-checked .fmv-label {
+  display: inline;
+}
+.fmv-check.fmv-checked {
+  background: #1b8a3a;
+}
+.fmv-check.fmv-checked .fmv-box {
+  background: #fff;
+  color: #1b8a3a;
+}
+
+/* Barra flotante */
+#fmv-toolbar {
+  position: fixed;
+  left: 16px;
+  bottom: 16px;
+  z-index: 2147483000;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 8px 6px 12px;
+  border-radius: 999px;
+  background: rgba(24, 25, 26, 0.94);
+  color: #e4e6eb;
+  font: 500 13px/1.2 system-ui, -apple-system, "Segoe UI", sans-serif;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
+  user-select: none;
+}
+#fmv-toolbar button {
+  border: none;
+  border-radius: 999px;
+  padding: 5px 10px;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  background: #3a3b3c;
+  color: #e4e6eb;
+}
+#fmv-toolbar button:hover {
+  background: #4e4f50;
+}
+#fmv-toolbar .fmv-stat {
+  white-space: nowrap;
+}

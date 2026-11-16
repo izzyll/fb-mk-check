@@ -1,0 +1,20 @@
+{
+  "manifest_version": 3,
+  "name": "Marketplace Visto",
+  "version": "1.0.0",
+  "description": "Marcá avisos de Facebook Marketplace como 'visto' para atenuarlos u ocultarlos y no ver repetidos.",
+  "permissions": ["storage", "unlimitedStorage"],
+  "host_permissions": ["https://*.facebook.com/*"],
+  "action": {
+    "default_title": "Marketplace Visto",
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://*.facebook.com/*"],
+      "js": ["content.js"],
+      "css": ["content.css"],
+      "run_at": "document_idle"
+    }
+  ]
+}
